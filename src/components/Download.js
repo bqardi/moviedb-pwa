@@ -2,24 +2,31 @@ import { useEffect, useState } from "react";
 import "./Download.scss";
 
 function Download(){
+	var [supportsPWA, setSupportsPWA] = useState(false);
 	var [deferredPrompt, setDeferredPrompt] = useState(null);
-
-	async function download(){
-		deferredPrompt.prompt();
-		var {outcome} = await deferredPrompt.userChoice;
-		console.log("Users response to the prompt: ", outcome);
-		deferredPrompt = null;
-	}
 
 	useEffect(() => {
 		function installHandler(e) {
 			e.preventDefault();
+			setSupportsPWA(true);
 			setDeferredPrompt(e);
 			console.log("Install prompt has been deferred!");
 		};
 		window.addEventListener("beforeinstallprompt", installHandler);
 		return () => window.removeEventListener("beforeinstallprompt", installHandler);
 	}, []);
+
+	async function download(e){
+		e.preventDefault();
+		if (!deferredPrompt) return;
+
+		deferredPrompt.prompt();
+		var {outcome} = await deferredPrompt.userChoice;
+		console.log("Users response to the prompt: ", outcome);
+		deferredPrompt = null;
+	}
+
+	if (!supportsPWA) return null;
 
 	return (
 		<section className="Download">
