@@ -19,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "http://localhost:3000/",
+  "start_url": "https://bqardi-moviedb.netlify.app/",
   "scope": ".",
   "display": "standalone",
   "theme_color": "orangered",
