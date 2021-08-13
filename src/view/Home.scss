@@ -1,9 +1,18 @@
 .Home{
-	font-weight: 700;
-	color: orangered;
+	position: relative;
+	padding: 40px 0 0;
 	@media screen and (min-width: 520px) {
-		font-size: 1.4em;
-		padding: 0 5vw;
+		padding: 80px 0 0;
+	}
+	&__onboarding{
+		position: absolute;
+		top: 0;
+		font-weight: 700;
+		color: orangered;
+		@media screen and (min-width: 520px) {
+			font-size: 1.4em;
+			left: 9vw;
+		}
 	}
 	&__arrow{
 		transform: rotate(-90deg);
