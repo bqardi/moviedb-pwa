@@ -1,0 +1,95 @@
+.Movies{
+	&__cards{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: 1rem;
+	}
+	&__link{
+		box-shadow: none;
+		border: 2px solid transparent;
+		transition-property: box-shadow, border;
+		transition-duration: .3s;
+		&:hover{
+			box-shadow: 0 0 9px 0 rgb(0, 119, 255);
+			border: 2px solid rgb(0, 119, 255);
+		}
+		&:focus{
+			outline: none;
+			box-shadow: 0 0 9px 0 orangered;
+			border: 2px solid orangered;
+		}
+	}
+	&__title{
+		position: absolute;
+		top: 0;
+		height: 40%;
+		background-image: linear-gradient(black, transparent);
+		color: white;
+		padding: 1rem;
+		font-size: 1.3em;
+		width: 100%;
+		margin-bottom: 1rem;
+		min-height: 70px;
+	}
+	&__description{
+		font-size: 0.9em;
+		font-weight: 700;
+		& span{
+			font-weight: 300;
+		}
+	}
+	&__loading{
+		position: absolute;
+		inset: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.Pagination{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+	margin-bottom: 1rem;
+	& button{
+		width: 48px;
+		height: 48px;
+		background-color: hsl(0, 0%, 90%);
+		border: none;
+		border-radius: 3px;
+		color: black;
+		fill: black;
+		cursor: pointer;
+		&:hover{
+			color: white;
+			fill: white;
+			background-color: orange;
+		}
+		&.js-current{
+			color: white;
+			fill: white;
+			background-color: orangered;
+		}
+	}
+	&__mobile{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		width: 80px;
+		justify-content: center;
+		align-items: center;
+		@media screen and (min-width: 520px) {
+			display: none;
+		}
+	}
+	&__desktop{
+		display: none;
+		@media screen and (min-width: 520px) {
+			display: inline-block;
+		}
+	}
+}

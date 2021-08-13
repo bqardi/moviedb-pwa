@@ -1,0 +1,25 @@
+.Movie{
+	&__poster{
+		margin-top: 1em;
+	}
+	&__ratings{
+		margin-top: 1em;
+		&--list{
+			list-style: "\2606";
+			margin-top: 0.75em;
+			margin-left: 0;
+			padding-left: 1.5em;
+			text-indent: 0.5em;
+			color: orangered;
+			font-weight: 700;
+		}
+		&--listitem{
+			line-height: 1.4em;
+		}
+		&--source{
+			color: black;
+			margin-right: 0.5em;
+			font-weight: 300;
+		}
+	}
+}

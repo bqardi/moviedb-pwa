@@ -1,0 +1,18 @@
+.Footer{
+	justify-self: flex-end;
+	&__address{
+		font-style: normal;
+		padding: 1rem 0;
+		color: hsl(0, 0%, 40%);
+	}
+	&__author{
+		text-decoration: none;
+		font-weight: 700;
+		color: black;
+		font-size: 1.2em;
+		transition: color .15s;
+		&:hover{
+			color: rgb(15, 64, 199);
+		}
+	}
+}

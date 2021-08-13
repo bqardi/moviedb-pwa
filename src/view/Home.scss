@@ -1,0 +1,17 @@
+.Home{
+	font-weight: 700;
+	color: orangered;
+	@media screen and (min-width: 520px) {
+		font-size: 1.4em;
+		padding: 0 5vw;
+	}
+	&__arrow{
+		transform: rotate(-90deg);
+		width: 32px;
+		margin-bottom: -7px;
+		fill: orangered;
+		@media screen and (min-width: 520px) {
+			width: 64px;
+		}
+	}
+}

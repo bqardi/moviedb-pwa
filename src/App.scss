@@ -1,0 +1,9 @@
+.App{
+	padding: 0 1rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	&__fill{
+		flex: 1;
+	}
+}
