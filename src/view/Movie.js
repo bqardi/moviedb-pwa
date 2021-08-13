@@ -18,10 +18,6 @@ function Movie({id}){
 			console.error(err);
 		});
 	}, [id]);
-
-	useEffect(() => {
-		console.log(content);
-	}, [content]);
 	
 	return (
 		<article className="Movie">

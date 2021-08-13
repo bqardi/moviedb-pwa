@@ -1,13 +1,13 @@
 import "./Movies.scss";
 import { Link } from "@reach/router";
 import Card from "../components/Card";
-import { useSearch } from "../App";
+import { useGlobalContext } from "../components/GlobalContext";
 import Pagination, { usePagination } from "../components/Pagination";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 
 function Movies(){
-	var {searchResult, setSearchResult} = useSearch();
+	var {searchResult, setSearchResult} = useGlobalContext();
 	var [content, setContent] = useState({});
 	var [loading, setLoading] = useState(false);
 	var pagination = usePagination(content.totalResults, 10);

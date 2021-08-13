@@ -5,31 +5,18 @@ import Footer from "./components/Footer";
 import { Router } from "@reach/router";
 import Movie from "./view/Movie";
 import Home from "./view/Home";
-import { createContext, useContext, useState } from "react";
+import { useState } from "react";
+import GlobalProvider from "./components/GlobalContext";
 
-var GlobalContext = createContext();
-
-export function useSearch(){
-	return useContext(GlobalContext);
-}
-
-function GlobalProvider({children}){
+function App() {
 	var [searchResult, setSearchResult] = useState({});
 	var [value, setValue] = useState("");
-	
-	return (
-		<GlobalContext.Provider value={{
+  
+  return (
+    <GlobalProvider value={{
       searchResult, setSearchResult,
       value, setValue
     }}>
-			{children}
-		</GlobalContext.Provider>
-	);
-}
-
-function App() {
-  return (
-    <GlobalProvider>
       <div className="App">
         <Router>
           <Header default />

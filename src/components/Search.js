@@ -1,9 +1,9 @@
 import { navigate } from "@reach/router";
-import { useSearch } from "../App";
+import { useGlobalContext } from "../components/GlobalContext";
 import "./Search.scss";
 
 function Search(){
-	var {setSearchResult, value, setValue} = useSearch();
+	var {setSearchResult, value, setValue} = useGlobalContext();
 
 	function submitHandler(e){
 		e.preventDefault();
