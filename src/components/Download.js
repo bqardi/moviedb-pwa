@@ -12,11 +12,13 @@ function Download(){
 	}
 
 	useEffect(() => {
-		window.addEventListener("beforeinstallprompt", e => {
+		function installHandler(e) {
 			e.preventDefault();
 			setDeferredPrompt(e);
 			console.log("Install prompt has been deferred!");
-		});
+		};
+		window.addEventListener("beforeinstallprompt", installHandler);
+		return () => window.removeEventListener("beforeinstallprompt", installHandler);
 	}, []);
 
 	return (
