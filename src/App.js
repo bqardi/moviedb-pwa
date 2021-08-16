@@ -19,8 +19,9 @@ function App() {
     }}>
       <div className="App">
         <Router>
-          <Header default />
-          <Header path="/movies/:id" showBack />
+          <Header path="/" />
+          <Header to="/" default />
+          <Header path="/movies/:id" to="/movies" />
         </Router>
         <div className="App__fill">
           <Router>
