@@ -11,6 +11,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+Notification.requestPermission(function(status) {
+  console.log("Notification permission status: ", status)
+});
+
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", e => {
 		navigator.serviceWorker.register("/sw.js").then(registration => {

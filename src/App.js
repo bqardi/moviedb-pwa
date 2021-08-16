@@ -36,8 +36,4 @@ function App() {
   );
 }
 
-Notification.requestPermission(function(status) {
-  console.log("Notification permission status: ", status)
-});
-
 export default App;
