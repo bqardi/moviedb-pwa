@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
@@ -12,13 +11,13 @@ ReactDOM.render(
 );
 
 Notification.requestPermission(function(status) {
-  console.log("Notification permission status: ", status)
+  // console.log("Notification permission status: ", status)
 });
 
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", e => {
 		navigator.serviceWorker.register("/sw.js").then(registration => {
-			console.log("Juhuu, SW registered successfully!", registration);
+			// console.log("Juhuu, SW registered successfully!", registration);
 		}, error => {
 			console.log("Something went poopy!", error);
 		});
